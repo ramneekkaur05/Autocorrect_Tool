@@ -26,14 +26,35 @@ def correction_using_llm(text)-> str:
 #     main()
 
 # Streamlit UI
-st.set_page_config(page_title= "Autocorrect tool", layout="centered")
-st.title("AUTOCORRECT TOOL")
+# st.set_page_config(page_title= "Autocorrect tool", layout="centered")
+# col1, col2 = st.columns([0.5,3])  # First column bigger for title
+
+# with col1:
+#     st.image("autocorrect.png", width=120) 
+
+# with col2:
+#     st.markdown("<h1 style='display: inline;'>AUTOCORRECT TOOL ✏️</h1>", unsafe_allow_html=True)
+
+col1, col2 = st.columns([1, 6])
+
+with col1:
+    st.image("autocorrect.png", width=100)
+
+with col2:
+    st.markdown(
+        """
+        <div style='display: flex; align-items: center; height: 100%;'>
+            <h1 style='margin: 0;'>AUTOCORRECT TOOL ✏️</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 user_input = ""
 user_input = st.text_area("Enter text to correct: ")
 if user_input!= "":
     corrected_text= correction_using_llm(user_input)
-    st.subheader("Corrected text is: ")
+    st.subheader("Corrected text is: 📃 ")
     st.write(corrected_text)
 
-else:
-    st.warning("Please firstly enter the text")
+# else:
+#     st.warning("Please firstly enter the text")
