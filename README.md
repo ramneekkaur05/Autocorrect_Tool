@@ -1,4 +1,4 @@
-# ✏️ Autocorrect Tool
+# ✏️ AUTOCORRECT TOOL
 (setup instructions included at last)
 
 This is a **Streamlit-based Autocorrect Application** that allows users to:
